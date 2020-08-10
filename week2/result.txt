@@ -1,0 +1,17 @@
+HTTP/1.1 200 OK
+Date: Mon, 03 Aug 2020 11:25:07 GMT
+Expires: -1
+Cache-Control: private, max-age=0
+Content-Type: text/html; charset=ISO-8859-1
+P3P: CP="This is not a P3P policy! See g.co/p3phelp for more info."
+Server: gws
+X-XSS-Protection: 0
+X-Frame-Options: SAMEORIGIN
+Set-Cookie: 1P_JAR=2020-08-03-11; expires=Wed, 02-Sep-2020 11:25:07 GMT; path=/; domain=.google.com; Secure
+Set-Cookie: NID=204=PyvXLVqxVUb1iOl_xmIectYzVqzW7hlevwv2skMLZau-cYAqx81vl2Bi0QBE_U3H43aYO4yf92qj2T18fozgMybCGLy7h0lwfU_eZsgIlHo8hScv36afu2gc2901pcX5saeBEX2uGQmZ5M-lP16sIy0BRLqa5H1BGh4c0-7SLBU; expires=Tue, 02-Feb-2021 11:25:07 GMT; path=/; domain=.google.com; HttpOnly
+Accept-Ranges: none
+Vary: Accept-Encoding
+Transfer-Encoding: chunked
+
+54c4
+<!doctype html><html itemscope="" itemtype="http://schema.org/WebPage" lang="th"><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><meta content="/images/branding/googleg/1x/googleg_standard_color_128dp.png" itemprop="image"><title>Google</title><script nonce="bc
