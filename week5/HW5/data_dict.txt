@@ -1,0 +1,30 @@
+meta
+	"dateIssued": "2020-08-18T13:37:46.327Z"
+location
+	latitude
+	longitude
+	timeZone
+forecasts [
+	date
+	values [
+		parameter
+		value
+	]
+]
+
+[0]	1 ชม ล่าสุด
+
+start 	2020-08-18T21:00:00
+18 3
+19 24
+20 24
+21 15	0-13, 19
+22 4	1, 7, 13, 19
+23 4
+24 4
+25 4
+26 4
+27 4
+28 1	1
+sum = 91
+stop 	2020-08-28T01:00:00
