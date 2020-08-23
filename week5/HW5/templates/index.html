@@ -285,7 +285,7 @@
               </a>
 
 							<a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-toggle="dropdown">
-                <img src="./static/img/avatars/avatar.jpg" class="avatar img-fluid rounded mr-1" alt="Charles Hall" /> <span class="text-dark">Charles Hall</span>
+                <img src="./static/img/avatars/avatar.jpg" class="avatar img-fluid rounded mr-1" alt="Charles Hall" /> <span class="text-dark">Mr.Natthapol Nonthasri</span>
               </a>
 							<div class="dropdown-menu dropdown-menu-right">
 								<a class="dropdown-item" href="pages-profile.html"><i class="align-middle mr-1" data-feather="user"></i> Profile</a>
@@ -327,20 +327,20 @@
 										<div class="card">
 											<div class="card-body">
 												<h5 class="card-title mb-4">Date</h5>
-												<h1 class="display-5 mt-1 mb-3">2020-8-19</h1>
+												<h1 class="display-5 mt-1 mb-3"> {{data[0]}} </h1>
 												<div class="mb-1">
-													<span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i> -3.65% </span>
-													<span class="text-muted">Since last week</span>
+													<!-- <span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i> -3.65% </span> -->
+													<!-- <span class="text-muted">Since last week</span> -->
 												</div>
 											</div>
 										</div>
 										<div class="card">
 											<div class="card-body">
 												<h5 class="card-title mb-4">Location</h5>
-												<h3 class="display-5 mt-1 mb-3">Bangkok/Thailand</h3>
+												<h3 class="display-5 mt-1 mb-3"> {{data[2]}} </h3>
 												<div class="mb-1">
-													<span class="text-success"> <i class="mdi mdi-arrow-bottom-right"></i> 5.25% </span>
-													<span class="text-muted">Since last week</span>
+													<!-- <span class="text-success"> <i class="mdi mdi-arrow-bottom-right"></i> 5.25% </span> -->
+													<!-- <span class="text-muted">Since last week</span> -->
 												</div>
 											</div>
 										</div>
@@ -349,20 +349,20 @@
 										<div class="card">
 											<div class="card-body">
 												<h5 class="card-title mb-4">Time</h5>
-												<h1 class="display-5 mt-1 mb-3">11.06</h1>
+												<h1 class="display-5 mt-1 mb-3"> {{data[1]}} </h1>
 												<div class="mb-1">
-													<span class="text-success"> <i class="mdi mdi-arrow-bottom-right"></i> 6.65% </span>
-													<span class="text-muted">Since last week</span>
+													<!-- <span class="text-success"> <i class="mdi mdi-arrow-bottom-right"></i> 6.65% </span> -->
+													<!-- <span class="text-muted">Since last week</span> -->
 												</div>
 											</div>
 										</div>
 										<div class="card">
 											<div class="card-body">
 												<h5 class="card-title mb-4">PM 2.5</h5>
-												<h1 class="display-5 mt-1 mb-3">8</h1>
+												<h1 class="display-5 mt-1 mb-3"> {{data[3]}} </h1>
 												<div class="mb-1">
-													<span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i> -2.25% </span>
-													<span class="text-muted">Since last week</span>
+													<!-- <span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i> -2.25% </span> -->
+													<!-- <span class="text-muted">Since last week</span> -->
 												</div>
 											</div>
 										</div>
@@ -453,21 +453,20 @@
 						<div class="col-12 col-lg-8 col-xxl-9 d-flex">
 							<div class="card flex-fill">
 								<div class="card-header">
-
-									<h5 class="card-title mb-0">Latest Projects</h5>
+									<h3>Dust average pm2.5</h3>
 								</div>
 								<table class="table table-hover my-0">
 									<thead>
 										<tr>
-											<th>Name</th>
-											<th class="d-none d-xl-table-cell">Start Date</th>
-											<th class="d-none d-xl-table-cell">End Date</th>
+											<th>Date</th>
+											<th class="d-none d-xl-table-cell">PM 2.5 Value</th>
+											<!-- <th class="d-none d-xl-table-cell">End Date</th> -->
 											<th>Status</th>
-											<th class="d-none d-md-table-cell">Assignee</th>
+											<th class="d-none d-md-table-cell">Details</th>
 										</tr>
 									</thead>
 									<tbody>
-										<tr>
+										<!-- <tr>
 											<td>Project Apollo</td>
 											<td class="d-none d-xl-table-cell">01/01/2020</td>
 											<td class="d-none d-xl-table-cell">31/06/2020</td>
@@ -499,7 +498,7 @@
 											<td>Project Phoenix</td>
 											<td class="d-none d-xl-table-cell">01/01/2020</td>
 											<td class="d-none d-xl-table-cell">31/06/2020</td>
-											<td><span class="badge badge-success">Done</span></td>
+											<td><span class="badge badge-primary">Done</span></td>
 											<td class="d-none d-md-table-cell">William Harris</td>
 										</tr>
 										<tr>
@@ -522,7 +521,29 @@
 											<td class="d-none d-xl-table-cell">31/06/2020</td>
 											<td><span class="badge badge-warning">In progress</span></td>
 											<td class="d-none d-md-table-cell">William Harris</td>
+										</tr> -->
+										{% for x in pm25_avg %}
+										<tr>
+											<td> {{x[1]}} </td>
+											<td> {{x[2]}} </td>
+											{% if x[0] == 0 %}
+												<td><span class="badge badge-primary">Very good</span></td>
+												<td class="d-none d-md-table-cell">เหมาะสำหรับกิจกรรมกลางแจ้งและการท่องเที่ยว</td>
+											{% elif x[0] == 1 %}
+												<td><span class="badge badge-success">Good</span></td>
+												<td class="d-none d-md-table-cell">สามารถทำกิจกรรมกลางแจ้งและการท่องเที่ยวได้ตามปกติ</td>
+											{% elif x[0] == 2 %}
+												<td><span class="badge badge-warning">Moderate</span></td>
+												<td class="d-none d-md-table-cell">สามารถทำกิจกรรมกลางแจ้งได้ตามปกติ แต่ถ้าเป็นผู้ที่ต้องดูแลสุขภาพเป็นพิเศษ หากมีอาการเกี่ยวกับระบบทางเดินหายใจ และระคายเคืองตา ไม่ควรทำกิจกรรมกลางแจ้งนาน</td>
+											{% elif x[0] == 3 %}
+												<td><span class="badge badge-danger">Began to affect health</span></td>
+												<td class="d-none d-md-table-cell">ควรเฝ้าระวังสุขภาพ ถ้ามีอาการเกี่ยวกับระบบทางเดินหายใจ ระคายเคืองตา ไม่ควรทำกิจกรรมกลางแจ้งนาน หรือใช้อุปกรณ์ป้องกัน ส่วนผู้ที่ต้องดูแลสุขภาพเป็นพิเศษ แล้วมีอาการทางสุขภาพ เช่น ไอ หายใจลำบาก ตาอักเสบ แน่นหน้าอก ปวดศีรษะ หัวใจเต้นไม่เป็นปกติ คลื่นไส้ อ่อนเพลีย ควรปรึกษาแพทย์</td>
+											{% else  %}
+												<td><span class="badge badge-danger">Have effect on health</span></td>
+												<td class="d-none d-md-table-cell">ทุกคนควรหลีกเลี่ยงกิจกรรมกลางแจ้งทุกอย่างหลีกเลี่ยงพื้นที่ที่มีมลพิษทางอากาศสูง หรือใช้อุปกรณ์ป้องกันตนเองหากมีความจำเป็น หากมีอาการทางสุขภาพควรปรึกษาแพทย์</td>
+											{% endif %}
 										</tr>
+										{% endfor %}
 									</tbody>
 								</table>
 							</div>
